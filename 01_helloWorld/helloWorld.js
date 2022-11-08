@@ -3,4 +3,3 @@ const helloWorld = function() {
 };
 
 module.exports = helloWorld;
-return = "allalala"
