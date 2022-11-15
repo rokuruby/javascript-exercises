@@ -1,7 +1,9 @@
 const sumAll = function(num1,num2) {
     
     
-   if (num1 < 0 || num2 < 0) {return "ERROR"}
+   if (num1 < 0 || num2 < 0 || isNaN(num1) || isNaN(num2) 
+   || typeof num1 == 'string' 
+   || typeof num2 == 'string' ) {return "ERROR"}
    
    var list = [];
 
