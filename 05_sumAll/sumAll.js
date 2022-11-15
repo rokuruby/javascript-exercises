@@ -1,19 +1,17 @@
-const sumAll = function(arr) {
-    let fullArr = [];
-    let sum = 0;
-    const reducer = (accumulator, currentValue) => accumulator + currentValue;
+const sumAll = function(num1,num2) {
+    var list = [];
 
-    arr.sort(function(a,b) {
-        return a-b
+    for (var i = num1; i <= num2; i++) {
+        list.push(i);
+    }
+
+    var total = list.reduce(function(a, b) {
+        return a + b;
+
     });
 
-    for (let i = arr[0]; i <=arr[1]; i++) {
-        fullArr.push(i);
-    }
-    sum = fullArr.reduce(reducer);
-
-    return sum;
-};
+    return total;   
+}
 
 // Do not edit below this line
 module.exports = sumAll;
