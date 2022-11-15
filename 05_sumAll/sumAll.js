@@ -1,5 +1,9 @@
 const sumAll = function(num1,num2) {
-    var list = [];
+    
+    
+   if (num1 < 0 || num2 < 0) {return "ERROR"}
+   
+   var list = [];
 
     for (var i = num1; i <= num2; i++) {
         list.push(i);
@@ -10,7 +14,7 @@ const sumAll = function(num1,num2) {
 
     });
 
-    return total;   
+    return total;
 }
 
 // Do not edit below this line
