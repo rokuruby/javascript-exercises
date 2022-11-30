@@ -1,4 +1,3 @@
-const findTheOldest = function(people) {
     const findTheOldest = function(array) {
         return array.reduce((oldest, currentPerson) => {
           const oldestAge = getAge(oldest.yearOfBirth, oldest.yearOfDeath);
@@ -14,7 +13,6 @@ const findTheOldest = function(people) {
         return death - birth;
       };
 
-};
 // copypasta from solutions
 // Do not edit below this line
 module.exports = findTheOldest;
