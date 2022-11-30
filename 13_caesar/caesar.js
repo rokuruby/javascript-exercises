@@ -1,20 +1,42 @@
 const caesar = function(input,num) {
 //split ori string into array
+    let splitWord = input.split("");
+    console.log(splitWord);
 
 //convert all array objects into unicode
+// https://www.tamasoft.co.jp/en/general-info/unicode-decimal.html
+
+var unicodeArray = [];
+  for (var i = 0; i < splitWord.length; i++) {
+    unicodeArray.push(splitWord[i].charCodeAt(0));
+  }
+  console.log(unicodeArray);
 
 //declare a new var to store modified array
-
+var modArray = [];
 //for loop
 //if object is exclamations or space , dont convert just store in modified array
 //else modify the array object  add the num input and store in modified array
- 
+for (var i = 0; i < unicodeArray.length; i++) {
+    if (unicodeArray[i] >= 32 && unicodeArray[i] <= 47) {
+        modArray[i] = unicodeArray[i];
+    }
+    modArray[i] = unicodeArray[i] + num;
+ };
+ console.log(modArray);
+
 //reconvert back the modified array into normal alphabets and exclamations and return the result
+    var encryptArray = [];
+    for (var i = 0; i < modArray.length; i++) {
+    encryptArray[i] = String.fromCharCode(modArray[i]);
+    }
 
-
-
-
-};
+console.log(encryptArray);
+//join the array back to a string var
+ var joinArray = encryptArray.join("");
+ return joinArray;
+ console.log(joinArray);
+}
 
 // Do not edit below this line
 module.exports = caesar;
