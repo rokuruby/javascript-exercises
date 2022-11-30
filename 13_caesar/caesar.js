@@ -18,10 +18,10 @@ var modArray = [];
 //if object is exclamations or space , dont convert just store in modified array
 //else modify the array object  add the num input and store in modified array
 for (var i = 0; i < unicodeArray.length; i++) {
-    if (unicodeArray[i] >= 32 && unicodeArray[i] <= 47) {
-        modArray[i] = unicodeArray[i];
+    if (unicodeArray[i] >= 65 && unicodeArray[i] <= 90 || unicodeArray[i] >= 97 && unicodeArray[i] <= 122  ) {
+        modArray[i] = unicodeArray[i] + num;;
     }
-    modArray[i] = unicodeArray[i] + num;
+    modArray[i] = unicodeArray[i];
  };
  console.log(modArray);
 
