@@ -3,25 +3,39 @@ const caesar = function(input,num) {
     let splitWord = input.split("");
     console.log(splitWord);
 
-//convert all array objects into unicode
+//convert only letters into unicode excluding the rest
 // https://www.tamasoft.co.jp/en/general-info/unicode-decimal.html
 
+
 var unicodeArray = [];
-  for (var i = 0; i < splitWord.length; i++) {
-    unicodeArray.push(splitWord[i].charCodeAt(0));
+
+for (var i = 0; i < splitWord.length; i++) {
+    if (splitWord[i] == '[' ||splitWord[i] == '.' ||splitWord[i] == ','  ||splitWord[i] == '/' ||splitWord[i] == ['!'] ||splitWord[i] == '%' ||splitWord[i] == '^' ||splitWord[i] == '&' ||splitWord[i] == '*' ||splitWord[i] == ';' ||splitWord[i] == ':' ||splitWord[i] == '{' ||splitWord[i] == '}' ||splitWord[i] == '='  ||splitWord[i] == '-' ||splitWord[i] == '_' ||splitWord[i] == '`' ||splitWord[i] == '~' ||splitWord[i] == '(' ||splitWord[i] == ')' ||splitWord[i] == ' ' ||splitWord[i] == ']' ) {
+        unicodeArray[i] = splitWord[i];
+    }
+
+     unicodeArray[i] = splitWord[i].charCodeAt(0);
   }
-  console.log(unicodeArray);
+  console.log(unicodeArray);//ERROR its not ignoring the punctuations and exclamation marks and still converting it to unicode
+  console.log(unicodeArray.length);
 
 //declare a new var to store modified array
 var modArray = [];
 //for loop
 //if object is exclamations or space , dont convert just store in modified array
 //else modify the array object  add the num input and store in modified array
-for (var i = 0; i < unicodeArray.length; i++) {
+/*for (var i = 0; i < unicodeArray.length; i++) {
     if (((unicodeArray[i]) >= 65) && ((unicodeArray[i]) <= 90)||((unicodeArray[i]) >= 97) && ((unicodeArray[i]) <= 122))
         modArray[i] = unicodeArray[i] + num;
     };// somehow its adding an error object in the array, i think im not converting the characters to the right unicode that the test is using
-    modArray[i] = unicodeArray[i];
+    modArray[i] = unicodeArray[i];  */
+    for (var i = 0; i < unicodeArray.length; i++) {
+        if (unicodeArray[i] == '[' || unicodeArray[i] == '.' ||unicodeArray[i] == ','  ||unicodeArray[i] == '/' ||unicodeArray[i] == '!' ||unicodeArray[i] == '%' ||unicodeArray[i] == '^' ||unicodeArray[i] == '&' ||unicodeArray[i] == '*' ||unicodeArray[i] == ';' ||unicodeArray[i] == ':' ||unicodeArray[i] == '{' ||unicodeArray[i] == '}' ||unicodeArray[i] == '='  ||unicodeArray[i] == '-' ||unicodeArray[i] == '_' ||unicodeArray[i] == '`' ||unicodeArray[i] == '~' ||unicodeArray[i] == '(' ||unicodeArray[i] == ')' ||unicodeArray[i] == ' ' ||unicodeArray[i] == ']' ) {
+            modArray[i] = unicodeArray[i];
+        }
+    
+         modArray[i] = unicodeArray[i]+num;
+      }
 
  console.log(modArray);
 
