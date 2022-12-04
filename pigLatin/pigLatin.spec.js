@@ -30,7 +30,7 @@ describe('translate', () => {
 		expect(pigLatin("cherry")).toBe('errychay');
 	});
 
-	test.skip('translates two words', () => {
+	test('translates two words', () => {
 		expect(pigLatin("eat pie")).toBe('eatay iepay');
 	});
 
