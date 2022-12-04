@@ -18,7 +18,7 @@ const pigLatin = require('./pigLatin')
 // See https://en.wikipedia.org/wiki/Pig_Latin for more details.
 
 describe('translate', () => {
-	test('translates a word beginning with a vowel', () => {
+	test.skip('translates a word beginning with a vowel', () => {
 		expect(pigLatin("apple")).toBe('appleay');
 	});
 

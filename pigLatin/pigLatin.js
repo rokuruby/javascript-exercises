@@ -31,14 +31,26 @@ for (var i = 0; i < splitWords.length; i++) {
     console.log(splitWords);
 }
 //else assume  1st letter is consonant, 
-//move letter to back of word and check 2nd letter in each word object is consonant, 
+//move letter to back of word and check 2nd letter in each word object is consonant, & add ay at the back in unicode
+if (splitWords[i][0] != 97 || splitWords[i][0] != 101 || splitWords[i][0] != 105 || splitWords[i][0] != 111 || splitWords[i][0] != 117) {
+    var spliceLetter = splitWords[i].splice(0,1);
+    splitWords[i].push(spliceLetter,97,121);
+    console.log(splitWords);
+};
 
-
-//if yes move letter to the back and check 3rd letter if is consonant, if yes move letter to the back
-
-//else add "ay to back of word in unicode"
+if (splitWords[i][0] != 97 && splitWords[i][1] != 97 || splitWords[i][0] != 101 && splitWords[i][1] != 101 || splitWords[i][0] != 105 && splitWords[i][1] != 105 || splitWords[i][0] != 111 && splitWords[i][1] != 111|| splitWords[i][0] != 117 && splitWords[i][1] != 117  ) {
+    var spliceLetter = splitWords[i].splice(0,2);
+    splitWords[i].push(spliceLetter,97,121);
+    console.log(splitWords);
+}
+//if yes move letter to the back and check 3rd letter if is consonant, if yes move letter to the back & add ay at the back in unicode
+if (splitWords[i][0] != 97 && splitWords[i][1] != 97 && splitWords[i][2] != 97 || splitWords[i][0] != 101 && splitWords[i][1] != 101 && splitWords[i][2] != 101 || splitWords[i][0] != 105 && splitWords[i][1] != 105 && splitWords[i][2] != 105 || splitWords[i][0] != 111 && splitWords[i][1] != 111 && splitWords[i][2] != 111 || splitWords[i][0] != 117 && splitWords[i][1] != 117 && splitWords[i][2] != 117 ) {
+    var spliceLetter = splitWords[i].splice(0,3);
+    splitWords[i].push(spliceLetter,97,121);
+    console.log(splitWords);
 }
 
+}
 
 //convert all unicode back to letter
 
